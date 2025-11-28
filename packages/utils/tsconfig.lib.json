@@ -1,0 +1,9 @@
+{
+  "extends": ["../../tsconfig.base.json", "../../tsconfig.paths.json"],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "noEmit": true,
+    "tsBuildInfoFile": "./dist/tsconfig.lib.tsbuildinfo"
+  },
+  "include": ["src/**/*.ts"]
+}
