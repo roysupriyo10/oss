@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["./src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "target": "ESNext",
+    "declarationMap": true
+  }
+}

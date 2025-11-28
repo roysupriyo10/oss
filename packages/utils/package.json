@@ -1,0 +1,9 @@
+{
+  "name": "@roysupriyo10/utils",
+  "dependencies": {
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^11.0.0"
+  }
+}

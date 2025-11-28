@@ -1,0 +1,22 @@
+{
+  "name": "@roysupriyo10/types",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json"
+  },
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts"
+    },
+    "./environment": {
+      "types": "./dist/environment/index.d.ts"
+    },
+    "./runtime-environment": {
+      "types": "./dist/runtime-environment/index.d.ts"
+    }
+  }
+}
