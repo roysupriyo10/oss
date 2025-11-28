@@ -1,0 +1,25 @@
+{
+  "name": "@roysupriyo10/fs",
+  "description": "helper package for resolving packages, entry files and workspace paths",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc -b",
+    "build": "pnpm typecheck && build --config ./build.config.ts --clean --minify --sourcemap"
+  },
+  "dependencies": {
+    "@roysupriyo10/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@roysupriyo10/build": "workspace:*",
+    "@roysupriyo10/types": "workspace:*",
+    "@types/node": "catalog:"
+  }
+}
