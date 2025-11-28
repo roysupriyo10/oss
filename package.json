@@ -1,0 +1,39 @@
+{
+  "name": "@roysupriyo10/oss",
+  "version": "1.0.0",
+  "description": "all of the packages that i think the world should also have",
+  "scripts": {
+    "watch:dev": "nx run-many -t watch:dev --exclude miner --output-style=stream",
+    "watch:prod": "nx run-many -t watch:prod --exclude miner --output-style=stream",
+    "watch:staging": "nx run-many -t watch:staging --exclude miner --output-style=stream",
+    "build:dev": "nx run-many -t build:dev --exclude miner --output-style=stream",
+    "build:prod": "nx run-many -t build:prod --exclude miner --output-style=stream",
+    "build:staging": "nx run-many -t build:staging --exclude miner --output-style=stream",
+    "lint": "eslint",
+    "format:all": "prettier --write ."
+  },
+  "nx": {},
+  "keywords": [],
+  "author": "Supriyo Roy",
+  "license": "ISC",
+  "packageManager": "pnpm@10.22.0",
+  "engines": {
+    "node": ">=23.0.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "catalog:",
+    "concurrently": "catalog:",
+    "esbuild": "catalog:",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "catalog:",
+    "eslint-plugin-prettier": "catalog:",
+    "globals": "catalog:",
+    "jiti": "^2.6.1",
+    "nx": "catalog:",
+    "prettier": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:"
+  }
+}
