@@ -1,0 +1,25 @@
+{
+  "name": "@roysupriyo10/build",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {}
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {},
+  "devDependencies": {
+    "@roysupriyo10/types": "workspace:*",
+    "tsup": "catalog:",
+    "vite": "catalog:"
+  },
+  "peerDependencies": {
+    "vite": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    }
+  }
+}

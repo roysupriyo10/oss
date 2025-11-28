@@ -1,8 +1,8 @@
-enum RuntimeEnvironment {
+enum Platform {
   FIGMA = "figma",
   CHROME = "chrome-extension",
   NODE = "node",
   BROWSER = "browser",
 }
 
-export { RuntimeEnvironment };
+export { Platform };
