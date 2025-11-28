@@ -1,4 +1,4 @@
-import fsp from "node:fs/promises";
+import type fsp from "node:fs/promises";
 
 type IMkdirOptions = {
   path: string | string[];

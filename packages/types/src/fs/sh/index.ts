@@ -7,6 +7,7 @@ export * from "./mkdir/index.js";
 export * from "./mv/index.js";
 export * from "./pwd/index.js";
 export * from "./cp/index.js";
+export * from "./basename/index.js";
 
 import type { IBasename } from "./basename/index.js";
 import type { ICp } from "./cp/index.js";

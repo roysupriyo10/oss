@@ -1,3 +1,5 @@
+export * from "./get.workspace.root/index.js";
+
 import type { IGetWorkspaceRoot } from "./get.workspace.root/index.js";
 
 interface IWorkspace {
