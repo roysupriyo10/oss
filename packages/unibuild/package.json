@@ -8,5 +8,9 @@
   "files": [
     "dist"
   ],
-  "scripts": {}
+  "scripts": {},
+  "devDependencies": {
+    "@roysupriyo10/types": "workspace:*",
+    "tsup": "catalog:"
+  }
 }
