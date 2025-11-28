@@ -9,14 +9,25 @@
     "./dist"
   ],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts"
+    "./stage": {
+      "types": "./dist/stage/index.d.ts",
+      "default": "./dist/stage/index.js"
     },
-    "./environment": {
-      "types": "./dist/environment/index.d.ts"
+    "./platform": {
+      "types": "./dist/platform/index.d.ts",
+      "default": "./dist/platform/index.js"
     },
-    "./runtime-environment": {
-      "types": "./dist/runtime-environment/index.d.ts"
+    "./utils": {
+      "types": "./dist/utils/index.d.ts",
+      "default": "./dist/utils/index.js"
+    },
+    "./fs": {
+      "types": "./dist/fs/index.d.ts",
+      "default": "./dist/fs/index.js"
     }
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "uuid": "catalog:"
   }
 }

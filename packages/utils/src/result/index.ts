@@ -1,4 +1,4 @@
-import type { IResult } from "@/types/result";
+import type { IResult } from "@roysupriyo10/types/utils";
 
 import withError from "./with.error";
 import asyncWithError from "./async.with.error";

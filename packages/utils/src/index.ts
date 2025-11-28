@@ -1,4 +1,4 @@
-import type { IUtils } from "./types";
+import type { IUtils } from "@roysupriyo10/types/utils";
 
 import uuid from "./uuid";
 import result from "./result";

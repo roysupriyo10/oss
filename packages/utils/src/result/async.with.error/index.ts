@@ -1,5 +1,4 @@
-import type { IResultTuple } from "@/types/result";
-import type { IAsyncWithError } from "@/types/result/async.with.error";
+import type { IResultTuple, IAsyncWithError } from "@roysupriyo10/types/utils";
 
 const asyncWithError: IAsyncWithError = function (input) {
   return input

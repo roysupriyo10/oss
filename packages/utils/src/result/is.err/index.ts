@@ -1,4 +1,4 @@
-import type { IIsErr } from "@/types/result";
+import type { IIsErr } from "@roysupriyo10/types/utils";
 
 const isErr = function (result) {
   return result[0] !== null;

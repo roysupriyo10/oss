@@ -1,4 +1,4 @@
-import type { IIsPromise } from "@/types/promise";
+import type { IIsPromise } from "@roysupriyo10/types/utils";
 
 const isPromise: IIsPromise = function <T>(
   value: unknown,

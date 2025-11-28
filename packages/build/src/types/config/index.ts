@@ -1,34 +1,114 @@
 import type { Options as TsupOptions } from "tsup";
-import type {} from "vite";
+import type { UserConfig as ViteConfig } from "vite";
+import type { CompilerOptions } from "typescript";
 import type { Platform } from "@roysupriyo10/types";
 import type { BuildTarget } from "@/types/target";
 
-/** This is the basic interface that can be extended with escape hatches */
+/** Base configuration shared by all build targets */
 interface BaseConfig {
-  /** Output directory ( will default ot "dist" ) */
+  /** Output directory (default: "dist") */
   outDir?: string;
 
-  /** Whether to rimraf the dist folder before building ( will default to true ) */
+  /** Whether to clean the output folder before building (default: true) */
   clean?: boolean;
 
-  /** Whether to generate sourcemaps ( will default to true ) */
+  /** Whether to generate sourcemaps (default: true) */
   sourcemap?: boolean;
 
-  /** Whether to minify the resultant output if it was bundled ( stage based configuration , stage === Stage.DEVELOPMENT ? true : false ) */
+  /** Whether to minify the output (default: false) */
   minify?: boolean;
+
+  /** Override TypeScript compiler options */
+  typescript?: CompilerOptions;
 }
 
-/** This is the interface that is required for building packages */
+/** Configuration for building publishable packages/libraries */
 interface PackageConfig extends BaseConfig {
-  /** This is the build target */
-  target: BuildTarget.PACKAGE;
+  target: typeof BuildTarget.PACKAGE;
 
-  /** Adapters to build for, will have additional logic to bundle based on the adapters being created in the package */
-  adapters?: Platform[];
-
-  /** Move this option in the main configuration */
+  /** Entry points for the package (default: auto-detected from src/core, src/adapters/*) */
   entry?: TsupOptions["entry"];
 
-  /** Escape hatch for overriding tsup configuration */
+  /** Adapter platforms to build (builds each as separate entry) */
+  adapters?: Platform[];
+
+  /** Whether to generate declaration files (default: true) */
+  dts?: boolean;
+
+  /** Path to tsconfig.json (default: "tsconfig.json") */
+  tsconfig?: string;
+
+  /** Escape hatch for tsup configuration */
   tsup?: Omit<TsupOptions, "entry" | "outDir">;
 }
+
+/** Configuration for building Node.js applications */
+interface NodeAppConfig extends BaseConfig {
+  target: typeof BuildTarget.NODE_APP;
+
+  /** Entry point(s) (default: "src/index.ts" or "src/**\/*.ts") */
+  entry?: string | string[];
+
+  /** Path to tsconfig.json (default: "tsconfig.json") */
+  tsconfig?: string;
+}
+
+/** Configuration for building browser applications (SPAs) */
+interface BrowserAppConfig extends BaseConfig {
+  target: typeof BuildTarget.BROWSER_APP;
+
+  /** Framework hint for default plugins */
+  framework?: "react" | "vue" | "svelte" | "vanilla";
+
+  /** Escape hatch for vite configuration */
+  vite?: Omit<ViteConfig, "root">;
+}
+
+/** Configuration for Figma plugins (not yet implemented) */
+interface FigmaPluginConfig extends BaseConfig {
+  target: typeof BuildTarget.FIGMA_PLUGIN;
+
+  /** Main entry point (plugin sandbox) */
+  main?: string;
+
+  /** UI entry point (iframe) */
+  ui?: string;
+}
+
+/** Configuration for Chrome extensions (not yet implemented) */
+interface ChromeExtensionConfig extends BaseConfig {
+  target: typeof BuildTarget.CHROME_PLUGIN;
+
+  /** Manifest version (default: 3) */
+  manifestVersion?: 2 | 3;
+
+  /** Background script entry */
+  background?: string;
+
+  /** Content scripts entries */
+  contentScripts?: string[];
+
+  /** Popup entry */
+  popup?: string;
+
+  /** Options page entry */
+  options?: string;
+}
+
+/** Union type of all build configurations - discriminated by target */
+type BuildConfig =
+  | PackageConfig
+  | NodeAppConfig
+  | BrowserAppConfig
+  | FigmaPluginConfig
+  | ChromeExtensionConfig;
+
+export type {
+  BaseConfig,
+  PackageConfig,
+  NodeAppConfig,
+  BrowserAppConfig,
+  FigmaPluginConfig,
+  ChromeExtensionConfig,
+  BuildConfig,
+};

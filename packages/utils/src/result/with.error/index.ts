@@ -1,4 +1,4 @@
-import type { IWithError } from "@/types/result";
+import type { IWithError } from "@roysupriyo10/types/utils";
 import promise from "@/promise";
 import asyncWithError from "@/result/async.with.error";
 

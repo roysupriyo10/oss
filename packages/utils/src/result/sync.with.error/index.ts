@@ -1,5 +1,4 @@
-import type { IResultTuple } from "@/types/result";
-import type { ISyncWithError } from "@/types/result/sync.with.error";
+import type { IResultTuple, ISyncWithError } from "@roysupriyo10/types/utils";
 
 const syncWithError: ISyncWithError = function (input) {
   try {

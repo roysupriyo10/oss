@@ -5,13 +5,6 @@ import path from "node:path";
 
 const CURRENT_WORKING_DIRECTORY = process.cwd();
 
-const TYPES_ENTRY_FILE = path.resolve(
-  CURRENT_WORKING_DIRECTORY,
-  "src",
-  "types",
-  "index.ts",
-);
-
 const INDEX_ENTRY_FILE = path.resolve(
   CURRENT_WORKING_DIRECTORY,
   "src",
@@ -22,7 +15,6 @@ export default defineConfig({
   target: BuildTarget.PACKAGE,
   tsconfig: "./tsconfig.lib.json",
   entry: {
-    "types/index": TYPES_ENTRY_FILE,
     index: INDEX_ENTRY_FILE,
   },
 });

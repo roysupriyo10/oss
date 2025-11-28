@@ -14,6 +14,7 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "useUnknownInCatchVariables": true,
+    "noEmit": true,
 
     // enable json imports and isolated modules for const enums, etc, other typescript gotchas
     "esModuleInterop": true,
