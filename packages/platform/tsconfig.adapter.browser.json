@@ -1,0 +1,8 @@
+{
+  "extends": ["../../tsconfig.base.json", "../../tsconfig.paths.json"],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "lib": ["ESNext", "DOM"]
+  },
+  "include": ["src/adapters/browser/**/*.ts"]
+}

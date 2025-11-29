@@ -1,0 +1,9 @@
+{
+  "extends": ["../../tsconfig.base.json", "../../tsconfig.paths.json"],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "tsBuildInfoFile": "./dist/tsconfig.lib.tsbuildinfo"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/adapters/**/*.ts"]
+}

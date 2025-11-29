@@ -1,0 +1,42 @@
+{
+  "name": "@roysupriyo10/platform",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc -b",
+    "build": "pnpm typecheck && build --config ./build.config.ts --clean --sourcemap"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./adapters/node": {
+      "types": "./dist/adapters/node/index.d.ts",
+      "default": "./dist/adapters/node/index.js"
+    },
+    "./adapters/browser": {
+      "types": "./dist/adapters/browser/index.d.ts",
+      "default": "./dist/adapters/browser/index.js"
+    },
+    "./adapters/figma": {
+      "types": "./dist/adapters/figma/index.d.ts",
+      "default": "./dist/adapters/figma/index.js"
+    },
+    "./adapters/chrome": {
+      "types": "./dist/adapters/chrome/index.d.ts",
+      "default": "./dist/adapters/chrome/index.js"
+    }
+  },
+  "dependencies": {
+    "@roysupriyo10/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "catalog:",
+    "@roysupriyo10/build": "workspace:*",
+    "@types/chrome": "catalog:",
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  }
+}

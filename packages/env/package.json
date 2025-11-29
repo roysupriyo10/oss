@@ -1,0 +1,33 @@
+{
+  "name": "@roysupriyo10/env",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc -b",
+    "build": "pnpm typecheck && build --config ./build.config.ts --clean --sourcemap"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./adapters/node": {
+      "types": "./dist/adapters/node/index.d.ts",
+      "default": "./dist/adapters/node/index.js"
+    },
+    "./adapters/browser": {
+      "types": "./dist/adapters/browser/index.d.ts",
+      "default": "./dist/adapters/browser/index.js"
+    }
+  },
+  "dependencies": {
+    "@roysupriyo10/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@roysupriyo10/build": "workspace:*",
+    "@types/node": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  }
+}
