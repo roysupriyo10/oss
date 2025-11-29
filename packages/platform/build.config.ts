@@ -28,6 +28,7 @@ export default defineConfig({
     {
       platform: Platform.CHROME,
       tsconfig: "./tsconfig.adapter.chrome.json",
+      entry: path.resolve(cwd, "src", "adapters", "chrome", "index.ts")
     },
   ],
 });

@@ -4,14 +4,16 @@ packages:
 
 catalogs:
   default:
-    "@eslint/js": ^9.39.1
-    "@tailwindcss/vite": ^4.1.17
-    "@types/express": ^5.0.5
-    "@types/node": 24.10.0
-    "@types/react": ^19.2.2
-    "@types/react-dom": ^19.2.2
-    "@types/uuid": ^11.0.0
-    "@vitejs/plugin-react-swc": ^4.2.1
+    '@eslint/js': ^9.39.1
+    '@figma/plugin-typings': ^1.121.0
+    '@tailwindcss/vite': ^4.1.17
+    '@types/chrome': ^0.1.31
+    '@types/express': ^5.0.5
+    '@types/node': 24.10.0
+    '@types/react': ^19.2.2
+    '@types/react-dom': ^19.2.2
+    '@types/uuid': ^11.0.0
+    '@vitejs/plugin-react-swc': ^4.2.1
     citty: ^0.1.6
     concurrently: ^9.2.1
     dotenv: ^17.2.3

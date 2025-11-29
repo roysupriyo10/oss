@@ -1,39 +1,42 @@
 import { type IGetWorkspaceRoot } from "@roysupriyo10/types/fs";
-
-import { readdirSync } from "node:fs";
-import path from "node:path";
+import platform from "@roysupriyo10/platform";
+import utils from "@roysupriyo10/utils";
 
 import sh from "@/sh";
 
 const getWorkspaceRoot: IGetWorkspaceRoot = async function () {
   const cwd = sh.pwd();
 
-  // when context package is ready, use environment variable from that
+  const ctx = platform.context.get({ optional: true });
+
   const workspaceConfigFilename =
-    // process.env.PNPM_WORKSPACE_CONFIG ??
-    // process.env.pnpm_workspace_config ??
+    ctx?.env.get("PNPM_WORKSPACE_CONFIG") ??
+    ctx?.env.get("pnpm_workspace_config") ??
     "pnpm-workspace.yaml";
 
-  const currentDirPath = path.resolve(cwd);
+  const currentDirPath = await sh.realpath(cwd);
 
-  function findWorkspaceRoot(dir: string) {
+  const findWorkspaceRoot = async function (dir: string): Promise<string> {
     if (dir === "/") {
-      console.error("No workspace root found");
-      process.exit(1);
+      throw new Error("No workspace root found");
     }
 
-    try {
-      const files = readdirSync(dir);
-      if (!files.includes(workspaceConfigFilename)) {
-        return findWorkspaceRoot(path.dirname(dir));
-      }
+    const listDirectoryResult = await utils.result.withError(sh.ls(dir));
 
-      return dir;
-    } catch (filesError) {
-      console.error(filesError);
-      process.exit(1);
+    if (utils.result.isErr(listDirectoryResult)) {
+      const [error] = listDirectoryResult
+
+      throw error;
     }
-  }
+
+    const [, files] = listDirectoryResult;
+
+    if (!files.includes(workspaceConfigFilename)) {
+      return findWorkspaceRoot(sh.dirname(dir));
+    }
+
+    return dir;
+  };
 
   return findWorkspaceRoot(currentDirPath);
 };

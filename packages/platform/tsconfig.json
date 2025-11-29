@@ -6,6 +6,18 @@
     },
     {
       "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.adapter.node.json"
+    },
+    {
+      "path": "./tsconfig.adapter.browser.json"
+    },
+    {
+      "path": "./tsconfig.adapter.figma.json"
+    },
+    {
+      "path": "./tsconfig.adapter.chrome.json"
     }
   ]
 }

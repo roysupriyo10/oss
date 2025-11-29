@@ -15,6 +15,7 @@
     "build": "pnpm typecheck && build --config ./build.config.ts --clean --minify --sourcemap"
   },
   "dependencies": {
+    "@roysupriyo10/platform": "workspace:*",
     "@roysupriyo10/utils": "workspace:*"
   },
   "devDependencies": {

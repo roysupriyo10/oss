@@ -1,7 +1,7 @@
 import type { Options as TsupOptions } from "tsup";
 import type { UserConfig as ViteConfig } from "vite";
 import type { CompilerOptions } from "typescript";
-import type { Platform } from "@roysupriyo10/types";
+import type { Platform } from "@roysupriyo10/types/platform";
 import type { BuildTarget } from "@/types/target";
 
 /** Base configuration shared by all build targets */
@@ -22,6 +22,18 @@ interface BaseConfig {
   typescript?: CompilerOptions;
 }
 
+/** Configuration for a single adapter */
+interface AdapterConfig {
+  /** Platform identifier */
+  platform: Platform;
+
+  /** Path to tsconfig for this adapter (default: uses package tsconfig) */
+  tsconfig?: string;
+
+  /** Custom entry point (default: src/adapters/{platform}/index.ts) */
+  entry?: string;
+}
+
 /** Configuration for building publishable packages/libraries */
 interface PackageConfig extends BaseConfig {
   target: typeof BuildTarget.PACKAGE;
@@ -30,7 +42,7 @@ interface PackageConfig extends BaseConfig {
   entry?: TsupOptions["entry"];
 
   /** Adapter platforms to build (builds each as separate entry) */
-  adapters?: Platform[];
+  adapters?: AdapterConfig[];
 
   /** Whether to generate declaration files (default: true) */
   dts?: boolean;
@@ -104,6 +116,7 @@ type BuildConfig =
   | ChromeExtensionConfig;
 
 export type {
+  AdapterConfig,
   BaseConfig,
   PackageConfig,
   NodeAppConfig,

@@ -24,6 +24,14 @@
     "./fs": {
       "types": "./dist/fs/index.d.ts",
       "default": "./dist/fs/index.js"
+    },
+    "./env": {
+      "types": "./dist/env/index.d.ts",
+      "default": "./dist/env/index.js"
+    },
+    "./context": {
+      "types": "./dist/context/index.d.ts",
+      "default": "./dist/context/index.js"
     }
   },
   "devDependencies": {

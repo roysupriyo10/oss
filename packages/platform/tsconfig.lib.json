@@ -4,5 +4,6 @@
     "baseUrl": "./",
     "tsBuildInfoFile": "./dist/tsconfig.lib.tsbuildinfo"
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/adapters/**/*.ts"]
 }

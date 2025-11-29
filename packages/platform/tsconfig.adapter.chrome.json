@@ -2,7 +2,8 @@
   "extends": ["../../tsconfig.base.json", "../../tsconfig.paths.json"],
   "compilerOptions": {
     "baseUrl": "./",
-    "types": ["chrome"]
+    "types": ["@types/chrome"],
+    "tsBuildInfoFile": "./dist/tsconfig.adapter.chrome.tsbuildinfo"
   },
   "include": ["src/adapters/chrome/**/*.ts"]
 }
