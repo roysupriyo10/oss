@@ -1,7 +1,5 @@
 import isPromise from "./is.promise";
 
-const promise = {
-  isPromise,
-};
+const promise = { isPromise };
 
 export default promise;

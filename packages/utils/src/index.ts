@@ -4,10 +4,6 @@ import uuid from "./uuid";
 import result from "./result";
 import promise from "./promise";
 
-const utils: IUtils = {
-  uuid,
-  promise,
-  result,
-};
+const utils: IUtils = { uuid, promise, result };
 
 export default utils;

@@ -1,17 +1,9 @@
 {
   "files": [],
   "references": [
-    {
-      "path": "./tsconfig.lib.json"
-    },
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.adapter.node.json"
-    },
-    {
-      "path": "./tsconfig.adapter.browser.json"
-    }
+    { "path": "./tsconfig.lib.json" },
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.adapter.node.json" },
+    { "path": "./tsconfig.adapter.browser.json" }
   ]
 }

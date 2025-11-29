@@ -48,8 +48,6 @@ export default defineConfig({
   treeshake: true,
   external: ["vite", "typescript", "tsup"],
   esbuildOptions(options) {
-    options.alias = {
-      "@": "./src",
-    };
+    options.alias = { "@": "./src" };
   },
 });

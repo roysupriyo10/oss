@@ -1,7 +1,4 @@
-type ITouchOptions = {
-  path: string | string[];
-  recursive?: boolean;
-};
+type ITouchOptions = { path: string | string[]; recursive?: boolean };
 
 type ITouch = (options: ITouchOptions) => Promise<void>;
 

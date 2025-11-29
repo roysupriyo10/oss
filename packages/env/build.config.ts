@@ -9,17 +9,9 @@ const cwd = process.cwd();
 export default defineConfig({
   target: BuildTarget.PACKAGE,
   tsconfig: "./tsconfig.lib.json",
-  entry: {
-    index: path.resolve(cwd, "src", "core", "index.ts"),
-  },
+  entry: { index: path.resolve(cwd, "src", "core", "index.ts") },
   adapters: [
-    {
-      platform: Platform.NODE,
-      tsconfig: "./tsconfig.adapter.node.json",
-    },
-    {
-      platform: Platform.BROWSER,
-      tsconfig: "./tsconfig.adapter.browser.json",
-    },
+    { platform: Platform.NODE, tsconfig: "./tsconfig.adapter.node.json" },
+    { platform: Platform.BROWSER, tsconfig: "./tsconfig.adapter.browser.json" },
   ],
 });

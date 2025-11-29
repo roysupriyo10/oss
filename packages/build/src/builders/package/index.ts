@@ -111,7 +111,11 @@ const build = async function (config: PackageConfig): Promise<void> {
         if (values && values.length > 0) {
           const aliasKey = key.replace(/\/\*$/, "");
           const aliasValue = values[0]?.replace(/\/\*$/, "") ?? "";
-          adapterAlias[aliasKey] = path.resolve(cwd, adapterBaseUrl, aliasValue);
+          adapterAlias[aliasKey] = path.resolve(
+            cwd,
+            adapterBaseUrl,
+            aliasValue,
+          );
         }
       }
 

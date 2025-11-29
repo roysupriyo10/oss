@@ -7,11 +7,7 @@
     "declarationMap": true,
     "types": ["node"],
     "noEmit": true,
-    "paths": {
-      "@/*": ["./src/*"],
-      "#/*": ["./*"],
-      "~/*": ["../../*"]
-    }
+    "paths": { "@/*": ["./src/*"], "#/*": ["./*"], "~/*": ["../../*"] }
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]

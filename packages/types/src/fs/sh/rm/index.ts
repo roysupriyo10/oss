@@ -1,8 +1,6 @@
 import type fsp from "node:fs/promises";
 
-type IRmOptions = {
-  path: string | string[];
-};
+type IRmOptions = { path: string | string[] };
 
 type IRm = (
   options: IRmOptions,

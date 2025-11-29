@@ -104,10 +104,7 @@ const create = function (
       return ts.visitNode(sourceFile, visitor) as ts.SourceFile;
     };
 
-    return {
-      transformSourceFile,
-      transformBundle: (bundle) => bundle,
-    };
+    return { transformSourceFile, transformBundle: (bundle) => bundle };
   };
 };
 

@@ -14,7 +14,5 @@ const INDEX_ENTRY_FILE = path.resolve(
 export default defineConfig({
   target: BuildTarget.PACKAGE,
   tsconfig: "./tsconfig.lib.json",
-  entry: {
-    index: INDEX_ENTRY_FILE,
-  },
+  entry: { index: INDEX_ENTRY_FILE },
 });

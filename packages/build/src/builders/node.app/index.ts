@@ -66,10 +66,7 @@ const build = async function (config: NodeAppConfig): Promise<void> {
 
   // 7. Create transformer
   const transformerFactory = transformers.transformer.create(
-    {
-      paths,
-      baseUrl: path.resolve(cwd, baseUrl),
-    },
+    { paths, baseUrl: path.resolve(cwd, baseUrl) },
     resolveCache,
   );
 

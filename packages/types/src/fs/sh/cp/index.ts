@@ -1,9 +1,6 @@
 import type fsp from "node:fs/promises";
 
-type ICpOptions = {
-  source: string | string[];
-  destination: string;
-};
+type ICpOptions = { source: string | string[]; destination: string };
 
 interface ICp {
   (

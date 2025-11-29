@@ -24,7 +24,7 @@ const getWorkspaceRoot: IGetWorkspaceRoot = async function () {
     const listDirectoryResult = await utils.result.withError(sh.ls(dir));
 
     if (utils.result.isErr(listDirectoryResult)) {
-      const [error] = listDirectoryResult
+      const [error] = listDirectoryResult;
 
       throw error;
     }

@@ -4,10 +4,6 @@ import detect from "./detect";
 import init from "./init";
 import context from "./context";
 
-const platform: IPlatform = {
-  detect,
-  init,
-  context,
-};
+const platform: IPlatform = { detect, init, context };
 
 export default platform;

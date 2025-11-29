@@ -1,8 +1,6 @@
 import type fsp from "node:fs/promises";
 
-type IMkdirOptions = {
-  path: string | string[];
-};
+type IMkdirOptions = { path: string | string[] };
 
 type IMkdir = (
   options: IMkdirOptions,
